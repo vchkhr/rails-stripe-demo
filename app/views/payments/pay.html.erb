@@ -1,1 +1,10 @@
 <h1>Pay for order #<%= @order.id %>: $<%= @order.total / 100 %></h1>
+
+<form id="payment-form" data-controller="checkout" data-stripe-publishable-key="<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>" data-stripe-client-secret="<%= @payment_intent_client_secret %>">
+  <div id="payment-message" class="hidden"></div>
+  <div id="payment-element"></div>
+  <button id="submit" class="btn btn-success mt-3">
+    <div class="spinner hidden" id="spinner"></div>
+    <span id="button-text">Pay now</span>
+  </button>
+</form>
