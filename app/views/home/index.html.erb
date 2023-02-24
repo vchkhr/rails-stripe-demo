@@ -1,2 +1,9 @@
-<p><%= link_to "Log in", new_user_session_path %></p>
-<p><%= link_to "Sign up", new_user_registration_path %></p>
+<% if current_user %>
+  <p>Welcome, <%= current_user.email %></p>
+  <p><%= link_to "Orders", orders_path %></p>
+  <p><%= button_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-outline-primary" %></p>
+
+<% else %>
+  <p><%= link_to "Log in", new_user_session_path %></p>
+  <p><%= link_to "Sign up", new_user_registration_path %></p>
+<% end %>

@@ -6,4 +6,8 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   root to: "home#index"
+
+  resources :orders do
+    get "/pay", to: "payments#pay", as: :pay
+  end
 end

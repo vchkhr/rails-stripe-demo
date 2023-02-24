@@ -1,0 +1,12 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @order %>
+
+<div>
+  <p><%= link_to "Pay for order", order_pay_path(order_id: @order.id), class: "btn btn-success" if @order.status == "pending" %></p>
+
+  <%= link_to "Edit this order", edit_order_path(@order) %> |
+  <%= link_to "Back to orders", orders_path %>
+
+  <%= button_to "Destroy this order", @order, method: :delete %>
+</div>
