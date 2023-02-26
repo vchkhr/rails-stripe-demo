@@ -1,5 +1,5 @@
 class Order < ApplicationRecord
   belongs_to :user
 
-  enum status: [:pending, :failed, :success]
+  enum status: [:pending, :processing, :failed, :succeed]
 end

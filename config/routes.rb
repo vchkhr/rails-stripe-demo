@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   resources :orders do
     get "/pay", to: "payments#pay", as: :pay
   end
+
+  post "/webhooks/payment", to: "payments#webhook"
 end
