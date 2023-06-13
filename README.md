@@ -1,4 +1,4 @@
-# Dockerized Rails 7 App
+# Rails Stripe Demo
 
 Based on [Awesome Compose](https://github.com/docker/awesome-compose/blob/master/official-documentation-samples/rails/README.md).
 
